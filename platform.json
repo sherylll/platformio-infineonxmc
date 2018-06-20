@@ -30,7 +30,8 @@
       "version": "https://github.com/Infineon/Assets/releases/download/current/gcc-arm-none-eabi-5_4-2016q3-20160926-win32.zip"
     },
     "framework-arduinoxmc": {
-      "type": "framework"
+      "type": "framework",
+      "version":"https://github.com/Infineon/XMC-for-Arduino/releases/download/V1.1.1/XMC_IFX_1.1.1.zip"
 	},
     "tool-xmcflasher":{
       "version":"https://github.com/Infineon/Assets/raw/master/Tools/XMCFlasher_IFX_1.2.1.zip",

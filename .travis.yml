@@ -14,7 +14,13 @@ before_script:
   - wget https://github.com/Infineon/Assets/releases/download/current/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.-d-.tar.bz2 -O /tmp/gcc-arm-none-eabi.tar.bz2
   - tar -xvjf /tmp/gcc-arm-none-eabi.tar.bz2
   - export PATH=$PATH:$PWD/gcc-arm-none-eabi-5_4-2016q3/bin/
+  - git clone https://github.com/Infineon/XMC-for-Arduino.git /tmp/core
+  - zip -r /tmp/core/framework-arduinoxmc.zip /tmp/core/arm 
   
+  - platform_json=$(<platform.json)
+  - rm platform.json
+  - jq '.packages.framework-arduinoxmc.version = "/tmp/core/framework-arduinoxmc.zip"' <<<"$platform_json"
+  - echo "$platform_json" > platform.json
 env:
   - PLATFORMIO_PROJECT_DIR=examples/arduino-blink
 
@@ -22,7 +28,7 @@ install:
   - pip install -U https://github.com/platformio/platformio/archive/develop.zip
   - platformio platform uninstall infineonxmc
   - platformio platform install file://. 
-  - git clone https://github.com/Infineon/XMC-for-Arduino.git /tmp/core
-  - cp -r /tmp/core/arm /home/travis/.platformio/packages/framework-arduinoxmc  
+
+  
 script:
   - platformio run -d $PLATFORMIO_PROJECT_DIR
