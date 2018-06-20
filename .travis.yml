@@ -23,6 +23,6 @@ install:
   - platformio platform uninstall infineonxmc
   - platformio platform install file://. 
   - git clone https://github.com/Infineon/XMC-for-Arduino.git /tmp/core
-  - cp -r /tmp/core/arm ~/.platformio/packages/framework-arduinoxmc  
+  - cp -r /tmp/core/arm /home/travis/.platformio/packages/framework-arduinoxmc  
 script:
   - platformio run -d $PLATFORMIO_PROJECT_DIR
