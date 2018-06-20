@@ -21,6 +21,7 @@ env:
 install:
   - pip install -U https://github.com/platformio/platformio/archive/develop.zip
   - platformio platform install file://. 
-  
+  - git clone https://github.com/Infineon/XMC-for-Arduino.git /tmp/core
+  - cp -r /tmp/core/arm ~/.platformio/packages/framework-arduinoxmc  
 script:
   - platformio run -d $PLATFORMIO_PROJECT_DIR
