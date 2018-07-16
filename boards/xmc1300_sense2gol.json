@@ -7,11 +7,7 @@
     "variant":"XMC1302",
     "board_variant":"XMC1300_Sense2GoL",
     "v":"0032"
-  },
-  "debug": {
-    "jlink_device": "XMC1302-0032",
-    "onboard_tools":["jlink"]
-  },    
+  }, 
   "frameworks": ["arduino"],
   "name": "XMC1300 Sense2GoL",
   "upload": {

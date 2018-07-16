@@ -8,10 +8,6 @@
     "board_variant":"XMC1300_Boot_Kit",
     "v":"0200"
   },
-  "debug": {
-    "jlink_device": "XMC1302-0200",
-    "onboard_tools":["jlink"]
-  },
   "frameworks": ["arduino"],
   "name": "XMC1300 Boot Kit",
   "upload": {
